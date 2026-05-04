@@ -11,28 +11,28 @@
   /* ─────── Theme tokens ───────
      Semantic vars below; per-theme overrides further down. */
   :root {
-    /* DUSK (default dark) */
-    --bg:          oklch(0.13 0.014 60);
-    --bg-2:        oklch(0.18 0.016 60);
-    --bg-rgba-70:  oklch(0.13 0.014 60 / 0.7);
-    --bg-rgba-85:  oklch(0.13 0.014 60 / 0.85);
-    --fg:          oklch(0.97 0.010 85);
-    --fg-2:        oklch(0.78 0.014 60);
-    --fg-3:        oklch(0.58 0.014 60);
-    --line:        oklch(0.30 0.014 60);
-    --accent:      oklch(0.70 0.16 45);
-    --accent-2:    oklch(0.62 0.16 35);
-    --accent-shadow: oklch(0.55 0.16 40);
-    --on-accent:   oklch(0.13 0.014 60);   /* text color when bg = accent */
-    --invert-bg:   oklch(0.97 0.010 85);   /* manifesto/pill background */
-    --invert-fg:   oklch(0.13 0.014 60);   /* manifesto/pill text */
-    --sage:        oklch(0.74 0.07 150);
-    --slate:       oklch(0.72 0.04 250);
-    --grid-line:   oklch(0.20 0.014 60);
-    --node-ink:    oklch(0.13 0.014 60);   /* always-dark ink on bright node fills */
-    --well:        oklch(0.08 0.014 60);   /* darker than bg, for tracks/icon tiles */
-    --is-dark:     1;
-    /* legacy aliases (so existing rules keep working) */
+    /* LAGOON (default) — pure white + deep teal + magenta */
+    --bg:          oklch(1 0 0);
+    --bg-2:        oklch(0.96 0 0);
+    --bg-rgba-70:  oklch(1 0 0 / 0.82);
+    --bg-rgba-85:  oklch(1 0 0 / 0.94);
+    --fg:          oklch(0.18 0.020 260);
+    --fg-2:        oklch(0.40 0.020 260);
+    --fg-3:        oklch(0.56 0.015 260);
+    --line:        oklch(0.84 0.008 260);
+    --accent:      oklch(0.60 0.24 340);
+    --accent-2:    oklch(0.50 0.26 338);
+    --accent-shadow: oklch(0.42 0.24 338);
+    --on-accent:   oklch(1 0 0);
+    --invert-bg:   oklch(0.22 0.060 215);
+    --invert-fg:   oklch(1 0 0);
+    --sage:        oklch(0.58 0.10 200);
+    --slate:       oklch(0.66 0.10 320);
+    --grid-line:   oklch(0.92 0.005 260);
+    --node-ink:    oklch(0.18 0.020 260);
+    --well:        oklch(0.94 0.005 260);
+    --is-dark:     0;
+    /* legacy aliases */
     --paper:       var(--invert-bg);
     --paper-2:     var(--invert-bg);
     --ink:         var(--invert-fg);
@@ -47,8 +47,29 @@
     --mono: 'JetBrains Mono', ui-monospace, monospace;
   }
 
-  /* DUSK explicit (default) */
-  [data-theme="dusk"] { /* uses :root defaults */ }
+  /* DUSK — carbon + terracotta */
+  [data-theme="dusk"] {
+    --bg:          oklch(0.13 0.014 60);
+    --bg-2:        oklch(0.18 0.016 60);
+    --bg-rgba-70:  oklch(0.13 0.014 60 / 0.7);
+    --bg-rgba-85:  oklch(0.13 0.014 60 / 0.85);
+    --fg:          oklch(0.97 0.010 85);
+    --fg-2:        oklch(0.78 0.014 60);
+    --fg-3:        oklch(0.58 0.014 60);
+    --line:        oklch(0.30 0.014 60);
+    --accent:      oklch(0.70 0.16 45);
+    --accent-2:    oklch(0.62 0.16 35);
+    --accent-shadow: oklch(0.55 0.16 40);
+    --on-accent:   oklch(0.13 0.014 60);
+    --invert-bg:   oklch(0.97 0.010 85);
+    --invert-fg:   oklch(0.13 0.014 60);
+    --sage:        oklch(0.74 0.07 150);
+    --slate:       oklch(0.72 0.04 250);
+    --grid-line:   oklch(0.20 0.014 60);
+    --node-ink:    oklch(0.13 0.014 60);
+    --well:        oklch(0.08 0.014 60);
+    --is-dark:     1;
+  }
 
   /* EMBER — char + amber + plum */
   [data-theme="ember"] {
@@ -1269,7 +1290,7 @@
           <li>Custom volume pricing</li>
           <li>Onboarding + behavioral coach</li>
         </ul>
-        <a href="/cdn-cgi/l/email-protection#9df5f4ddfef5f8fef6f0fce9fef5b3fceded" class="btn btn-ghost" style="justify-content: center;">Talk to sales</a>
+        <a href="/cdn-cgi/l/email-protection#244c4d64474c41474f494550474c0a455454" class="btn btn-ghost" style="justify-content: center;">Talk to sales</a>
       </div>
     </div>
   </div>
@@ -1720,8 +1741,8 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     }
   });
 
-  let saved = 'dusk';
-  try { saved = localStorage.getItem(STORAGE_KEY) || 'dusk'; } catch (e) {}
+  let saved = 'lagoon';
+  try { saved = localStorage.getItem(STORAGE_KEY) || 'lagoon'; } catch (e) {}
   apply(saved);
 })();
 </script>
